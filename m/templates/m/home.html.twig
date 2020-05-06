@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<p> <a href="{% url 'add_url' %}">Ajouter une URL</a> </p>
+
+<h3>Liste des URLs existant :</h3>
+<div>
+{% for mini_url in mini_urls %}
+<p>{{mini_url.url}} via <a href="{#{% url 'redirect_by_code' mini_url.code %}#}">le mini_url correspondant</a>
+    par ({{mini_url.pseudo}}): {{mini_url.nb_access}} accès</p>
+{% empty %}
+<p>Pas d'URLs pour le moment</p>
+{% endfor %}
+</div>
+{% endblock %}
