@@ -23,5 +23,6 @@ class MiniUrl(models.Model):
         return self.url
 
     def save(self, *args, **kwargs):
-        code = generer(6)
+        if len(self.code)==0 :
+            self.code = generer(6)
         super().save(*args, **kwargs)
