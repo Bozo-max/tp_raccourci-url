@@ -8,7 +8,7 @@ import string
 def generer(nb_caracters):
     caracters = string.ascii_letters + string.digits
     alea = [random.choice(caracters) for _ in range(nb_caracters)]
-    return alea
+    return ''.join(alea)
 
 
 # Create your models here.

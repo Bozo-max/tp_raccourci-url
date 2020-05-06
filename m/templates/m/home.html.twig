@@ -6,7 +6,7 @@
 <h3>Liste des URLs existant :</h3>
 <div>
 {% for mini_url in mini_urls %}
-<p>{{mini_url.url}} via <a href="{% url 'redirect_by_code' mini_url.code %}">le mini_url correspondant</a>
+<p>{{mini_url.url}} via <a href="{% url 'redirect_by_code' mini_url.code %}">{{request.META.HTTP_HOST}}/m/{{mini_url.code}}</a>
     par ({{mini_url.pseudo}}): {{mini_url.nb_access}} accès</p>
 {% empty %}
 <p>Pas d'URLs pour le moment</p>
